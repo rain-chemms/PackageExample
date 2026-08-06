@@ -5,7 +5,6 @@ using System.Collections;
 [RequireComponent(typeof(Button))]
 public class PackageGrid : MonoBehaviour
 {
-    
     [SerializeField] private int index;//背包格子的索引
     public int Index {get => index;set => index = value;}
     [SerializeField] private int number;//道具的数量

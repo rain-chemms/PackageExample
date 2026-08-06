@@ -3,7 +3,7 @@ using UnityEngine.UI;
 using TMPro;
 
 [RequireComponent(typeof(PackageGrid))]
-public class PackageGridViewSetter : MonoBehaviour
+public class PackageGridSpriteSetter : MonoBehaviour
 {
     [SerializeField] private PackageGrid grid;
     void OnEnable()
@@ -11,6 +11,12 @@ public class PackageGridViewSetter : MonoBehaviour
         if(grid != null) grid = GetComponent<PackageGrid>();
         FreshDisplay();
     }
+
+    void Start()
+    {
+        FreshDisplay();
+    }
+    
     [SerializeField] private TMP_Text itemName;//名称
     [SerializeField] private TMP_Text itemNumber;
     [SerializeField] private Image itemImage;

@@ -5,10 +5,10 @@ using System.Threading.Tasks;
 using UnityEngine;
 
 //单例模式
-public class DatabaseManager
+public class DBManager
 {
-    private static DatabaseManager _instance;
-    public static DatabaseManager Instance => _instance ??= new DatabaseManager();
+    private static DBManager _instance;
+    public static DBManager Instance => _instance ??= new DBManager();
 
     private SQLiteAsyncConnection _db;
     
@@ -35,6 +35,7 @@ public class DatabaseManager
         await _db.CreateTableAsync<PackageData>();
         await _db.CreateTableAsync<PlayerState>();
         await _db.CreateTableAsync<ItemData>();
+        await _db.CreateTableAsync<Recipe>();
 
         Debug.Log($"[DBManager]: 数据库初始化完成: {DbPath}");
     }

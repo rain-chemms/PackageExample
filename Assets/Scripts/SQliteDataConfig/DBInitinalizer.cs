@@ -3,13 +3,23 @@ using UnityEngine;
 
 public class DBInitinalizer : MonoBehaviour
 {
+    public static DBInitinalizer instance;
     async void Awake()
     {
-        await DatabaseManager.Instance.Initialize();
+        if(instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+        await DBManager.Instance.Initialize();
     }   
 
     async void OnDestroy()
     {
-        await DatabaseManager.Instance.Close();
+        await DBManager.Instance.Close();
     } 
 }
