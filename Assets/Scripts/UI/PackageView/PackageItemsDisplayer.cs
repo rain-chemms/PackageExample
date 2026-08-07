@@ -16,15 +16,15 @@ public class PackageItemDisplayer : MonoBehaviour
     async void Start()
     {
         //读取当前的玩家存档信息
-        await FreshDisplay();
+        FreshDisplay();
     }
     async void OnEnable()
     {
         //读取当前的玩家存档信息
-        await FreshDisplay();
+        FreshDisplay();
     }
     //依据数据刷新背包显示
-    public async Task FreshDisplay()
+    public async void FreshDisplay()
     {
         await DBManager.Instance.Initialize();
         await PackageDataGetter.instance.GetDataFromDB();

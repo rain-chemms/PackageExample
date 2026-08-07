@@ -6,7 +6,7 @@ public class ItemData
     /// <summary>
     /// 物品的信息,作为主键不能重复
     /// </summary>
-    [PrimaryKey]
+    [PrimaryKey,AutoIncrement]
     public int ItemID {get;set;}
     /// <summary>
     /// 物品的名字

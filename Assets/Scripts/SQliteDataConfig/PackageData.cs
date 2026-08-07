@@ -6,7 +6,7 @@ public class PackageData
     /// <summary>
     /// 背包的格子索引,作为主键不能重复
     /// </summary>
-    [PrimaryKey]
+    [PrimaryKey,AutoIncrement]
     public int ID {get;set;}
 
     [Column("PlayerID"),Indexed]

@@ -4,7 +4,7 @@ using SQLite4Unity3d;
 [Table("Recipe")]
 public class Recipe
 {
-    [PrimaryKey]
+    [PrimaryKey,AutoIncrement]
     public int RecipeID{get;set;}//配方的ID
     [Column("GenerateID")]
     public int GenerateID{get;set;}//生成物品的ID
