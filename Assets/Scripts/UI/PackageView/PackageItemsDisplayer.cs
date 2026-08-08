@@ -13,11 +13,7 @@ public class PackageItemDisplayer : MonoBehaviour
     public PackageGrid GridPrefab{ get=>gridPrefab; }
     [SerializeField] private ScrollRect itemView;
     public ScrollRect ItemView{ get=>itemView; }
-    async void Start()
-    {
-        //读取当前的玩家存档信息
-        FreshDisplay();
-    }
+    
     async void OnEnable()
     {
         //读取当前的玩家存档信息
